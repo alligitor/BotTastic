@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ensure proper scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- Site Description & Keywords -->
+  <meta name="description" content="BotTastic Home Page">
+  <meta name="keywords" content="Boston Mesh, Meshtastic, BotTastic">
+  <meta name="author" content="Boston Mesh">
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.bottastic.org/favicon.png?3">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="BotTastic">
+  <meta property="og:description" content="A Bot for Meshtastic Users">
+  <meta property="og:image" content="favicon.png?3">
+  <meta property="og:url" content="https://www.bottastic.org">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BotTastic">
+  <meta name="twitter:description" content="BotTastic Home Page">
+  <meta name="twitter:image" content="favicon.png?3">
+
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+
+  <link rel="icon" type="image/png" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.bottastic.org/favicon.png?3">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.bottastic.org/favicon.png?3">
+  <meta name="msapplication-TileColor" content="#67EA94">
+  <meta name="msapplication-TileImage" content="favicon.png?3">
+  <meta name="theme-color" content="#67EA94">
+
+  <title>BotTastic</title>
+  
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      background: url('https://www.bottastic.org/background.svg') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #EBEBEB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0; 
+      width: 100%; 
+      height: 100%;
+      background: rgba(87, 87, 87, 0.4);
+      pointer-events: none;
+    }
+    .splash-box {
+      background-color: #EBEBEB;
+      border-radius: 30px;
+      padding: 3em 3em 2em 3em;
+      margin: 1em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      color: #000000;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .top-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      width: 100%;
+      padding-bottom: 15px;
+    }
+    .top-section a img {
+      width: 35px;
+      filter: invert(15%) sepia(17%) saturate(767%) hue-rotate(198deg) brightness(94%) contrast(91%);
+    }
+    .logo {
+      width: 200px;
+      height: auto;
+      padding-right: 30px;
+    }
+    .text-content {
+      text-align: left;
+    }
+    .text-content h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .text-content p {
+      margin: 0.5em 0;
+    }
+    .sub-header {
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #67EA94;
+      color: #000000;
+      border: none;
+      padding: 1em 1.75em;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0.5em;
+      font-size: 17px;
+      text-align: left;
+      text-decoration: none;
+    }
+    .btn-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 0.7;
+    }
+    .btn-text small {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .btn img {
+      height: 30px;
+      filter: brightness(0);
+    }
+    .btn-group {
+      display: flex;
+      gap: 1em;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+    .btn-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .btn-small {
+      display: inline-block;
+      margin-top: 0.5em;
+      color: #fff;
+      background-color: #2C2D3C;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5em 1.25em;
+      border-radius: 15px;
+    }
+    .site-footer {
+      margin-top: 2em;
+      padding-top: 2em;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #2C2D3C;
+      border-top: 1px solid #ccc;
+    }
+    .site-footer a {
+      color: #757684;
+      text-decoration: none;
+    }
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Adjustments for devices with a viewport width of 800px or less */
+    @media (max-width: 800px) {
+      body {
+        align-items: flex-start;
+        padding-top: calc(env(safe-area-inset-top, 1em));
+      }
+      .splash-box {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 2em;
+        min-width: 350px;
+      }
+      .top-section {
+        flex-direction: column;
+        padding-bottom: 20px;
+      }
+      .logo {
+        width: 150px;
+        padding-right: 0;
+        margin-bottom: 1em;
+      }
+      .text-content {
+        text-align: center;
+      }
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8em 1em;
+        font-size: 16px;
+      }
+    }
+    
+    /* Further adjustments for devices with a viewport width of 480px or less */
+    @media (max-width: 480px) {
+      .splash-box {
+        padding: 1.5em;
+        margin: 1em;
+        width: 90%;
+        min-width: 250px;
+      }
+      .logo {
+        width: 120px;
+      }
+      .text-content h1 {
+        font-size: 20px;
+      }
+      .text-content p {
+        font-size: 14px;
+      }
+      .btn {
+        padding: 0.7em 1em;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="splash-box">
+    <div class="top-section">
+      <img src="https://www.bottastic.org/logo_sm.png" alt="BotTastic Logo" class="logo" />
+      <div class="text-content">
+        <h1>BotTastic</h1>
+        <p class="sub-header">BotTastic</p>
+        <a href="https://www.bottastic.org" rel="nofollow noindex"><img src="https://www.bottastic.org/email.svg" alt="Email" /></a>
+      </div>
+    </div>
+    test 0
+    <div class="btn-groups">
+      test 1
+      <div class="btn-group">
+        <a href="https://meshtastic.org/" target="_blank" class="btn">
+          <img src="https://www.bottastic.org/meshtastic.svg" alt="Meshtastic Icon" />
+          <div class="btn-text">
+            Meshtastic Home
+          </div>
+        </a>
+        <a href="https://meshtastic.liamcottle.net/?lat=42.367676308265196&lng=288.9033508300782&zoom=10" target="_blank" class="btn">
+          <img src="https://www.bottastic.org/globe.svg" alt="Globe Icon" />
+          <div class="btn-text">
+            Liam's Boston Map
+          </div>
+        </a>
+      </div>
+      test 2
+      <div class="btn-group">
+        <a href="https://www.bottastic.org/botinfo.html" target="_blank" class="btn">
+          <img src="https://www.bottastic.org/bottastic.svg" alt="BotTastic Icon" />
+          <div class="btn-text">
+            BotTastic Info
+          </div>
+        </a>
+        <a href="https://discord.gg/UysVVwnV" target="_blank" class="btn">
+          <img src="https://www.bottastic.org/discord.svg" alt="Discord Icon" />
+          <div class="btn-text">
+            Boston Mesh Invite
+          </div>
+        </a>
+        <a href="https://discord.com/channels/867578229534359593" target="_blank" class="btn">
+          <img src="https://www.bottastic.org/discord.svg" alt="Discord Icon" />
+          <div class="btn-text">
+            Boston Mesh
+            <small>General</small>
+          </div>
+        </a>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <p><a href="index.html">BotTastic</a> is a Bot for <a href="https://meshtastic.org" target="_blank">Meshtastic</a> enthusiasts.</p>
+      <p><a href="https://ctmesh.org">CT Mesh</a> is where I got this web site! Thank you</p>
+      <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Content licensed CC BY-SA 4.0</a></p>
+    </footer>
+  </div>
+</html>
