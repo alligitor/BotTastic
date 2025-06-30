@@ -303,7 +303,10 @@
       <b>fortune</b>A random joke from a list of one-liners collected on internet.
       <b>distance</b>Calculates the distance to the user, if they have a location set.
       <b>history</b>Returns the last few messages received on the channel. Very useful in comparing what the bot saw on the channel vs. what the user saw.  You can also use this, in a DM, to do distance testing. Send unique messages from different locations, come back to range, issue history and see what was received.
-      <p>Remember, due to how Meshtastic limits number of hops a message can take, what you see could be very different than what the hop sees.
+      <p>This has two main uses.
+      <p>Send it on the public channel to get a list of messages there.  So you know if there are messages you missed.
+      <p>Send, up to 5, as DM from different locations.  Then from a spot where you know you have connectivity, send the history command.  The bot will DM you back the last five messages.  This way, you can see what locations resulted in a successful delivery.
+      <p>Remember, due to how Meshtastic limits number of hops a message can take, what you see could be very different than what the bot sees.
     </div>
     <div class="text-content">
       <br><br>All these commands work over the public channel and direct messaging.
