@@ -316,6 +316,11 @@
     </div>
     <div class="text-content">
       <br><br>All these commands work over the public channel and direct messaging. The output could be slightly different though. On public channel, responses are addressed to the original sender.
+      <p><b>Hop Count</b>
+      <p>In responding to messages, the bot has two goals:
+      <p> Make sure the response gets to the original sender.
+      <p> Reduce unnecessary propagation of packets through out the mesh.
+      <p> Therefore, it uses hop limits cleverly.  It calculates the number of hops the original message took to get to the bot and marks the out going packet with a similar hop limit.  This increases the chances of the original sender receiving a reply and the rest of the mesh not.  For example, if a "test" request is received with 2 hops, the reply goes back with a limit of 3 hops.
     </div>
 
     <div class="text-content">
