@@ -322,10 +322,11 @@
     </div>
     <div class="text-content">
       <b>pubkeydupcheck</b>Compares your public key to all the other nodes that the bot knows about for a match.  Meshtastic has now updated the phone apps and the radio firmware to help detect this but the bot can also help you do a local check.  BotTastic only knows the nodes it hears from so feel free to run it often.  If there is a duplicate, you can get the new phone app and regenerate your key from Settings->Security.
-      <b>Important</b>At the moment, for various reasons, Meshtastic only updates the public key when a node is first found.  Subsequent updates to the key are not accepted.  The only way to refresh the keys is to delete all nodes and let them be found again. This is an issue with Meshtastic firmware.
+      <b>Important</b>At the moment, for various reasons, Meshtastic only updates the public key when a node is first found.  Subsequent updates to the key are not accepted.  The only way to refresh the keys is to delete a node and let it be found again with the new key. This is an issue with Meshtastic firmware.
       <p>Impacts to you:
       <p>You might regenerate your key and ask the bot to do a duplicate check.  It might still flag your key as duplicate because it doesn't have your updated key. Check your new key against the link below. If the key shown in your app is different than whats listed, ignore the message and wait until bot's keys are updated.
-      <p>Bot might tell you it doesn't know your key. Most likely, it deleted all the learned nodes and is in the process of finding them again.  Wait until it learns about your node.  This learning process is 100% based on how Meshtastic works and there's no way to speed it up.
+      <p><b>deleteme</b> - Command to force the bot to delete your node. This is meant to bypass Meshtastic's key update policy.  Force a delete and let the bot learn your new key.
+      <p>Bot might tell you it doesn't know your key. Most likely, it deleted all the learned nodes and is in the process of finding them again.  Wait until it learns about your node.  This learning process is 100% based on how Meshtastic works and there's no way to speed it up. You can try sending the bot a DM. Sometimes it kicks Meshtastic into exchanging keys.
       <p>I suggest checking often. It might not find a duplicate key for you today, but might find one as it learns about more nodes.
       <p>Also, you might just ignore this whole duplicate key problem if you are not doing anything super secret over DM.
       <p><a href="https://www.bottastic.org/duplicate_keys.txt" target="https://www.bottastic.org/duplicate_keys.txt" rel="noopener">List of duplicate keys</a>
