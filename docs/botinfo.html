@@ -326,11 +326,25 @@
       <b>Important</b>At the moment, for various reasons, Meshtastic only updates the public key when a node is first found.  Subsequent updates to the key are not accepted.  The only way to refresh the keys is to delete a node and let it be found again with the new key. This is an issue with Meshtastic firmware.
       <p>Impacts to you:
       <p>You might regenerate your key and ask the bot to do a duplicate check.  It might still flag your key as duplicate because it doesn't have your updated key. Check your new key against the link below. If the key shown in your app is different than whats listed, ignore the message and wait until bot's keys are updated.
+
       <p><b>deleteme</b> - Command to force the bot to delete your node. This is meant to bypass Meshtastic's key update policy.  Force a delete and let the bot learn your new key.
       <p>Bot might tell you it doesn't know your key. Most likely, it deleted all the learned nodes and is in the process of finding them again.  Wait until it learns about your node.  This learning process is 100% based on how Meshtastic works and there's no way to speed it up. You can try sending the bot a DM. Sometimes it kicks Meshtastic into exchanging keys.
       <p>I suggest checking often. It might not find a duplicate key for you today, but might find one as it learns about more nodes.
       <p>Also, you might just ignore this whole duplicate key problem if you are not doing anything super secret over DM.
       <p><a href="https://www.bottastic.org/duplicate_keys_eb90265e.html" target="https://www.bottastic.org/duplicate_keys_eb90265e.html" rel="noopener">List of duplicate keys</a>
+
+
+      <p><b>pingme</b> - In pursuit of helping people test their connection, pingme is a command that will send you a bunch of messages at a given interval.
+      Use the command as follows:  pingme <count> <delay in seconds>
+      <p>count is how many packets you'd want to receive (up to 10)
+      <p>delay is the interval (in seconds) between each message.
+      <p>For example: pingme 5 6 will send  you 5 messages, each 6 seconds apart.
+      <p>Since you don't really know if the Bot received your message or not, there's a page that logs all Ping Me messages.
+      <p>So you can see what to expect.
+      <p><a href="https://www.bottastic.org/botpingmelog_eb90265e.html" target="https://www.bottastic.org/botpingmelog_eb90265e.html" rel="noopener">Ping Me History - Burlington Area</a>
+      <p><a href="https://www.bottastic.org/botpingmelog_433ec13c.html" target="https://www.bottastic.org/botpingmelog_433ec13c.html" rel="noopener">Ping Me History - Harvard Sq. Area</a>
+
+
       <p><b>Word on Meshtastic Encryption</b>
       <p>Meshtastic doesn't have the most secure encryption mechanism. Don't count on it as you might on other things.  Yes, they do use encryption but devil is in the details.
       <p>In their words: "Is it as secure as Wi-Fi WPA3, HTTPS TLS1.3, or Signal?  <b>No.</b>"
